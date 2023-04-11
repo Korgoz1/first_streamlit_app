@@ -1,2 +1,5 @@
 import streamlit
-streamlit.title('My parents new dinner')
+streamlit.title('Waffle & Sausage')
+streamlit.header('Breakfast')
+streamlit.header('Breakfast burrito')
+streamlit.header('Orange Juice')
