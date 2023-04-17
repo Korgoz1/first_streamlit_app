@@ -36,7 +36,7 @@ try:
         fruitvvice_normalized = pandas. json_normalize(fruitvvice_response.json())
         streamlit.dataframe(fruitvvice_normalized)
     
-   except URLError as e:
+except URLError as e:
      streamlit. error ()
 
 streamlit.write('The user entered ', fruit_choice)
