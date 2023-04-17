@@ -45,5 +45,4 @@ my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
 
-#This will not work correctly, but just go with it now
 my_cur.execute("insert into pc_rivery_db.public.fruit_load_list values ('from streamlit')")
