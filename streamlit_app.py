@@ -27,10 +27,27 @@ streamlit.dataframe(fruits_to_show)
 
 #New Section to display fruityvice api response
 streamlit.header ('Fruityvice Fruit Advice! ')
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+try:
+  fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+  if not fruit choice:
+  streamlit.error ("Please select a fruit to get information.")
+  else:
+    fruityvice response = requests.get("https://fruityvice.com/api/fruit/" + fruit choice)
+    fruitvvice normalized = pandas. ison normalize(fruitvvice response. ison())
+    streamlit.dataframe(fruitvvice normalized)
+    
+    except URLError as e:
+    streamlit. error ()
+
 streamlit.write('The user entered ', fruit_choice)
 
-fruityvice_response=requests.get("https://fruityvice.com/api/fruit/" +"kiwi")
+#import requests
+fruityvice response=requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+
+# take the ison version of the response and normalize it
+fruityvice normalized = pandas.json_normalize(fruityvice_response.ison())
+#output it the screen as a table
+streamlit.dataframe(fruityvice_normalized)
 
 # write your own comment -what does the next line do? 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
